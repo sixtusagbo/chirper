@@ -42,4 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * A user has many chirps.
+     */
+    public function chirps()
+    {
+        return $this->hasMany(Chirp::class);
+    }
 }
